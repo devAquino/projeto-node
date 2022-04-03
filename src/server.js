@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const jwt = require('jsonwebtoken');
-
+const port = process.env.PORT || 3333;
 
 require('./database')
 const app = express();
@@ -12,4 +12,4 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(routes)
 
-app.listen(process.env.PORT,()=>{console.log('Server is up!!!');})
+app.listen(port, ()=>{console.log('Server is up!!!');})
